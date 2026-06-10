@@ -98,14 +98,6 @@ class Humanoid(Robot):
             assert right_foot_ee_offset.shape == (4, 4)
             self.right_foot_ee_offset = right_foot_ee_offset
 
-        # only applicable if has freeflying dofs... TODO figure out best way to handle
-        self.selection_matrix = np.vstack(
-            [
-                np.zeros((6, self.num_actuated_joints)),
-                np.eye(self.num_actuated_joints),
-            ]
-        )
-
     # HANDS AND FEET TRANSFORMS
 
     def left_hand_transform(self, q: Array) -> Array:
