@@ -409,7 +409,10 @@ class Robot:
             jnp.zeros_like(parent_axes),
         ).T
         J = jnp.vstack([Jv, Jw])
-        # Reconstruct full jacobian from parent computations
+        # Fast path: if parents are all joints, then we can just return directly
+        if len(parent_chain) == self.num_joints:  # Note: this is static
+            return J
+        # Otherwise, reconstruct full jacobian from parent computations
         J_full = jnp.zeros((6, self.num_joints)).at[:, parent_chain].set(J)
         return J_full
 
@@ -485,7 +488,10 @@ class Robot:
         ).T
         J_dot = jnp.vstack([Jv_dot, Jw_dot])
 
-        # Reconstruct full Jacobian and derivative from parent computations
+        # Fast path: if parents are all joints, then we can just return directly
+        if len(parent_chain) == self.num_joints:  # Note: this is static
+            return J, J_dot
+        # Otherwise, reconstruct full Jacobian and derivative from parent computations
         J_full = jnp.zeros((6, self.num_joints)).at[:, parent_chain].set(J)
         J_dot_full = jnp.zeros((6, self.num_joints)).at[:, parent_chain].set(J_dot)
         return J_full, J_dot_full
