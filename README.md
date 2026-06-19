@@ -137,7 +137,7 @@ The following features are unplanned:
 - [chungmin99/pyroki](https://github.com/chungmin99/pyroki) -- Global IK and kinematic optimization (JAX)
 - [stephane-caron/pink](https://github.com/stephane-caron/pink) -- Differential IK with Pinocchio (Python)
 - [kevinzakka/mink](https://github.com/kevinzakka/mink) -- Differential IK with MuJoCo (Python)
-- [danielpmorton/cbfpy](https://github.com/danielpmorton/cbfpy) -- Control barrier functions (JAX)
+- [StanfordASL/cbfpy](https://github.com/StanfordASL/cbfpy) -- Control barrier functions (JAX)
 - [StanfordASL/oscbf](https://github.com/StanfordASL/oscbf) -- Safe manipulator control (JAX)
 
 
@@ -149,7 +149,7 @@ The following features are unplanned:
   title={frax: Fast Robot Kinematics and Dynamics in JAX},
   journal={arXiv preprint arXiv:2604.04310},
   year={2026},
-  note={Submitted to the ICRA 2026 Workshop on Frontiers of Optimization for Robotics},
+  note={ICRA 2026 Workshop on Frontiers of Optimization for Robotics},
 }
 ```
 
